@@ -63,7 +63,11 @@ snippet main
 	${0}
 
 snippet struct
-	struct ${1:name} {
-		${2:/* data */}
+	type ${1:name} struct {
+		${0}
 	}
-	${0}
+
+snippet method
+    func (${1} *${2}) ${3}() ${4}{
+        ${0}
+    }
