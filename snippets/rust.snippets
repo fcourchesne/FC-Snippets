@@ -1,0 +1,92 @@
+snippet fn
+	fn ${1:name}(${2}) ${3} {
+		${0}
+	}
+
+snippet struct
+	struct ${1:name} {
+		${2:var}: ${3:type},
+	}
+
+snippet if
+	if ${1:condition} {
+		${2:statement}
+	}
+
+snippet ifelse
+	if ${1:condition} {
+		${2:statement}
+	} else {
+		${3:statement}
+	}
+
+snippet forin
+	for ${1:var} in ${2:range} {
+		${3:statement}
+	}
+
+snippet while
+	while ${1:condition} {
+		${2:statement}
+	}
+
+snippet loop
+	loop {
+		${1:statement}
+	}
+
+snippet match
+	match ${1:var} {
+		${2:value1} => ${3:action},
+		_ => ${4:action},
+	}
+
+snippet vec
+	vec![${1:val1}, ${2:others...}]
+
+snippet trait
+	trait ${1:TraitName} {
+		${2:function_signature}
+	}
+
+snippet impltrait
+	impl ${1:TraitName} for ${2:struct} {
+		${3:function_signature}
+	}
+
+snippet closure
+	|${1}| ${2}
+
+snippet unsafe
+	unsafe {
+		${1}
+	}
+
+snippet test
+		#[test]
+		fn test_${1:function}() {
+			${2:assert_eq!( , );}
+		}
+
+snippet bench
+		#[bench]
+		fn bench_${1:function}(b: &mut Bencher) {
+			b.iter(|| ${3:execution});
+		}
+
+snippet testnbench
+	#[cfg(test)]
+	mod tests {
+		use super::*;
+		use test::Bencher;
+
+		#[test]
+		fn test_${1:function}() {
+			${2:assert_eq!( , );}
+		}
+
+		#[bench]
+		fn bench_${1:function}(b: &mut Bencher) {
+			b.iter(|| ${3:execution});
+		}
+	}
